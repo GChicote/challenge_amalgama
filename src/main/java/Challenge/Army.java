@@ -8,7 +8,6 @@ import java.util.Comparator;
  * @author Gabriel
  */
 public abstract class Army {
-    
     protected int pikemen;
     protected int archers;
     protected int knights;
@@ -23,37 +22,35 @@ public abstract class Army {
     }
     
     
-    // Getters
     public int getPikemen() {
         return pikemen;
     }
-
+    
     public int getArchers() {
         return archers;
     }
-
+    
     public int getKnights() {
         return knights;
     }
-
+    
     public ArrayList<Unit> getUnits() {
         return units;
     }
-
+    
     public int getGoldCoins() {
         return goldCoins;
     }
-
+    
     public ArrayList<Battle> getBattleHistory() {
         return battleHistory;
     }
 
-    // Setters
     public void setGoldCoins(int goldCoins) {
         this.goldCoins = goldCoins;
     }
 
-    ////////////////////////////////////////////////////////////////////////////  
+      
     public int armyStrength() {
         return this.units.stream().reduce(0, (Integer p, Unit u) -> {
             return p + u.getStrength();
@@ -83,14 +80,13 @@ public abstract class Army {
             this.setGoldCoins(getGoldCoins() - u.getTrainCost());
             u.train();
         } else {
-            throw new InsufficientGoldException("Not onough gold to train unit!");
+            throw new InsufficientGoldException("Not enough gold to train unit!");
         }
     }
     
     public void transform(Unit u) throws CannotTransformException, InsufficientGoldException {
         if (canTransform(u)) {
-            this.dischargeUnit(u);
-            this.units.add(u.transform());
+            u.transform();
         }
         else if (!u.canTransform())
             throw new CannotTransformException("This unit is unable to tansform!");

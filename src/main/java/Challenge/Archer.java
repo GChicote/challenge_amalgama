@@ -4,7 +4,7 @@ package Challenge;
  *
  * @author Gabriel
  */
-public class Archer extends Unit {
+public class Archer extends UnitType {
     
     public Archer() {
         this.strength = 10;

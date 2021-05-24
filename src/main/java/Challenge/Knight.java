@@ -4,7 +4,7 @@ package Challenge;
  *
  * @author Gabriel
  */
-public class Knight extends Unit {
+public class Knight extends UnitType {
     
     public Knight() {
         this.strength = 20;
@@ -15,7 +15,7 @@ public class Knight extends Unit {
     
     @Override
     public Knight transform() {
-        return this;
+        return null;
     }
     
 }

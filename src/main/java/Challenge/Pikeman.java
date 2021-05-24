@@ -4,7 +4,7 @@ package Challenge;
  *
  * @author Gabriel
  */
-public class Pikeman extends Unit {
+public class Pikeman extends UnitType {
     
     public Pikeman() {
         this.strength = 5;
@@ -13,8 +13,7 @@ public class Pikeman extends Unit {
         this.transformCost = 30;
         this.canTransform = true;
     }
-    
-    
+
     @Override
     public Archer transform() {
         return new Archer();

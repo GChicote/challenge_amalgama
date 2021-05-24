@@ -4,43 +4,46 @@ package Challenge;
  *
  * @author Gabriel
  */
-public abstract class Unit {
-    
-    protected int strength;
-    protected int strengthOnTrain;
-    protected int trainCost;
-    protected int transformCost;
-    protected boolean canTransform;
-    
-    public  Unit() {}
+public class Unit {
+    private UnitType unit;
 
-    // Getters
+    
+    public  Unit(UnitType type) {
+        this.unit = type;
+    }
+
+    
     public int getStrength() {
-        return strength;
+        return this.unit.getStrength();
     }
-
+    
     public int getStrengthOnTrain() {
-        return strengthOnTrain;
+        return this.unit.getStrengthOnTrain();
     }
-
+    
     public int getTrainCost() {
-        return trainCost;
+        return this.unit.getTrainCost();
     }
     
     public int getTransformCost() {
-        return transformCost;
+        return this.unit.getTransformCost();
     }
     
     public boolean canTransform() {
-        return this.canTransform;
-    }
-
-
-    ////////////////////////////////////////////////////////////////////////////
-    protected void train() {
-        this.strength += this.strengthOnTrain;
+        return this.unit.canTransform();
     }
     
-    abstract public Unit transform();
+    
+    public UnitType getUnitType() {
+        return this.unit;
+    }
+    
+    protected void train() {
+        this.unit.train();
+    }
+    
+    protected void transform() {
+        this.unit = this.unit.transform();
+    }
     
 }

@@ -11,9 +11,9 @@ public class English extends Army {
         this.archers = 10;
         this.knights = 10;
         for (int i=0; i<this.pikemen; i++) {
-            units.add(new Pikeman());
-            units.add(new Archer());
-            units.add(new Knight());
+            units.add(new Unit(new Pikeman()));
+            units.add(new Unit(new Archer()));
+            units.add(new Unit(new Knight()));
         }
     }
     

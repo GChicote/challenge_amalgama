@@ -11,11 +11,11 @@ public class Byzantine extends Army {
         this.archers = 8;
         this.knights = 15;
         for (int i=0; i<this.pikemen; i++)
-            units.add(new Pikeman());
+            units.add(new Unit(new Pikeman()));
         for (int i=0; i<this.archers; i++)
-            units.add(new Archer());
+            units.add(new Unit(new Archer()));
         for (int i=0; i<this.knights; i++)
-            units.add(new Knight());
+            units.add(new Unit(new Knight()));
     }
 
 }
